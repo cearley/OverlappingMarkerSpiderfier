@@ -1,5 +1,7 @@
 h1. Overlapping Marker Spiderfier for Google Maps API v3
 
+_Written by "George MacKerron":https://github.com/jawj, forked by "M1ke":https://github.com/m1ke to add as a Bower package_
+
 *Ever noticed how, in "Google Earth":http://earth.google.com, marker pins that overlap each other spring apart gracefully when you click them, so you can pick the one you meant?*
 
 *And ever noticed how, when using the "Google Maps API":http://code.google.com/apis/maps/documentation/javascript/, the same thing doesn't happen?*
@@ -26,7 +28,11 @@ See the "demo map":http://jawj.github.com/OverlappingMarkerSpiderfier/demo.html 
 
 h2. Download
 
-Download "the compiled, minified JS source":http://jawj.github.com/OverlappingMarkerSpiderfier/bin/oms.min.js.
+This fork can be installed using "bower":http://bower.io.
+
+bc. bower install overlapping-marker-spiderfier
+
+Or download "the compiled, minified JS source":https://raw.githubusercontent.com/M1ke/OverlappingMarkerSpiderfier/master/oms.min.js.
 
 *Please note: version 0.3 introduces a breaking change. The @willSpiderfy(marker)@ and @markersThatWillAndWontSpiderfy()@ methods have been replaced with the (similar, but different) @markersNearMarker(marker)@ and @markersNearAnyOtherMarker()@ methods.*
 
