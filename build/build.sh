@@ -3,7 +3,7 @@
 INDIR=../lib/
 INPREFIX=oms
 
-OUTDIR=./tmp/
+OUTDIR=../
 OUTNAME=${INPREFIX}.min.js
 OUTFILE=${OUTDIR}${OUTNAME}
 
@@ -17,6 +17,3 @@ java -jar /usr/local/closure-compiler/compiler.jar \
 > $OUTFILE
 
 echo '/*' $(date) '*/' >> $OUTFILE
-
-cp $OUTFILE ../../gh-pages/bin
-cp ${OUTDIR}${INPREFIX}.js ../../gh-pages/bin

@@ -26,7 +26,7 @@ class @['OverlappingMarkerSpiderfier']
   
   p['circleSpiralSwitchover'] = 9    # show spiral instead of circle from this marker count upwards
                                      # 0 -> always spiral; Infinity -> always circle
-  p['circleFootSeparation'] = 23     # related to circumference of circle
+  p['circleFootSeparation'] = 43     # related to circumference of circle
   p['circleStartAngle'] = twoPi / 12
   p['spiralFootSeparation'] = 26     # related to size of spiral (experiment!)
   p['spiralLengthStart'] = 11        # ditto
