@@ -30,7 +30,7 @@ h2. Download
 
 This fork can be installed using "bower":http://bower.io.
 
-bc. bower install overlapping-marker-spiderfier
+bc. bower install overlapping-marker-spiderfier --save
 
 Or download "the compiled, minified JS source":https://raw.githubusercontent.com/M1ke/OverlappingMarkerSpiderfier/master/oms.min.js.
 
