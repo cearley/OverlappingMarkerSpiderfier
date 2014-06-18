@@ -1,0 +1,15 @@
+{
+    "name": "overlapping-marker-spiderfier",
+    "author": {
+        "name": "George MacKerron",
+        "url": "https://github.com/jawj"
+    },
+    "description": "In Google Earth, marker pins that overlap each other spring apart gracefully when you click them. This code makes Google Maps API version 3 map markers behave in that Google Earth way (minus the animation).",
+    "files": [
+        "oms.js",
+        "oms.min.js"
+    ],
+    "ignore":[
+        "README.textile"
+    ]
+}
