@@ -50,6 +50,12 @@ class @['OverlappingMarkerSpiderfier']
   lcU[mt.TERRAIN] = lcU[mt.ROADMAP]   = '#444'
   lcH[mt.TERRAIN] = lcH[mt.ROADMAP]   = '#f00'
 
+  destroy: () ->
+    for e in ['click', 'zoom_changed', 'maptypeid_changed']
+      ge.clearListeners(@map, e)
+    @projHelper.setMap(null)
+    @projHelper = null
+    @map = null
   # Note: it's OK that this constructor comes after the properties, because a function defined by a
   # function declaration can be used before the function declaration itself
   constructor: (@map, opts = {}) ->

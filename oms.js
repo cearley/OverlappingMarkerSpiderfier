@@ -82,6 +82,18 @@ Note: The Google Maps API v3 must be included *before* this code
 
     lcH[mt.TERRAIN] = lcH[mt.ROADMAP] = '#f00';
 
+    _Class.prototype.destroy = function() {
+      var e, l, len1, ref2;
+      ref2 = ['click', 'zoom_changed', 'maptypeid_changed'];
+      for (l = 0, len1 = ref2.length; l < len1; l++) {
+        e = ref2[l];
+        ge.clearListeners(this.map, e);
+      }
+      this.projHelper.setMap(null);
+      this.projHelper = null;
+      return this.map = null;
+    };
+
     function _Class(map1, opts) {
       var e, k, l, len1, ref2, v;
       this.map = map1;
