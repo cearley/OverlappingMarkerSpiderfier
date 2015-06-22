@@ -82,7 +82,7 @@ Note: The Google Maps API v3 must be included *before* this code
 
     lcH[mt.TERRAIN] = lcH[mt.ROADMAP] = '#f00';
 
-    _Class.prototype.destroy = function() {
+    p.destroy = function() {
       var e, l, len1, ref2;
       ref2 = ['click', 'zoom_changed', 'maptypeid_changed'];
       for (l = 0, len1 = ref2.length; l < len1; l++) {

@@ -50,7 +50,7 @@ class @['OverlappingMarkerSpiderfier']
   lcU[mt.TERRAIN] = lcU[mt.ROADMAP]   = '#444'
   lcH[mt.TERRAIN] = lcH[mt.ROADMAP]   = '#f00'
 
-  destroy: () ->
+  p.destroy = ->
     for e in ['click', 'zoom_changed', 'maptypeid_changed']
       ge.clearListeners(@map, e)
     @projHelper.setMap(null)
