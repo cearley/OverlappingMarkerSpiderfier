@@ -83,11 +83,12 @@ Note: The Google Maps API v3 must be included *before* this code
     lcH[mt.TERRAIN] = lcH[mt.ROADMAP] = '#f00';
 
     p.destroy = function() {
-      var e, l, len1, ref2;
-      ref2 = ['click', 'zoom_changed', 'maptypeid_changed'];
+      var l, len1, listenerRef, ref2;
+      this.clearMarkers();
+      ref2 = this.mapListenerRefs;
       for (l = 0, len1 = ref2.length; l < len1; l++) {
-        e = ref2[l];
-        ge.clearListeners(this.map, e);
+        listenerRef = ref2[l];
+        ge.removeListener(listenerRef);
       }
       this.projHelper.setMap(null);
       this.projHelper = null;
@@ -108,14 +109,15 @@ Note: The Google Maps API v3 must be included *before* this code
       this.projHelper = new this.constructor.ProjHelper(this.map);
       this.initMarkerArrays();
       this.listeners = {};
+      this.mapListenerRefs = [];
       ref2 = ['click', 'zoom_changed', 'maptypeid_changed'];
       for (l = 0, len1 = ref2.length; l < len1; l++) {
         e = ref2[l];
-        ge.addListener(this.map, e, (function(_this) {
+        this.mapListenerRefs.push(ge.addListener(this.map, e, (function(_this) {
           return function() {
             return _this['unspiderfy']();
           };
-        })(this));
+        })(this)));
       }
     }
 

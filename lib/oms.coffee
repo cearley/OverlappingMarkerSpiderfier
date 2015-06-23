@@ -51,8 +51,8 @@ class @['OverlappingMarkerSpiderfier']
   lcH[mt.TERRAIN] = lcH[mt.ROADMAP]   = '#f00'
 
   p.destroy = ->
-    for e in ['click', 'zoom_changed', 'maptypeid_changed']
-      ge.clearListeners(@map, e)
+    @clearMarkers()
+    ge.removeListener(listenerRef) for listenerRef in @mapListenerRefs
     @projHelper.setMap(null)
     @projHelper = null
     @map = null
@@ -63,8 +63,9 @@ class @['OverlappingMarkerSpiderfier']
     @projHelper = new @constructor.ProjHelper(@map)
     @initMarkerArrays()
     @listeners = {}
+    @mapListenerRefs = []
     for e in ['click', 'zoom_changed', 'maptypeid_changed']
-      ge.addListener(@map, e, => @['unspiderfy']())
+      @mapListenerRefs.push(ge.addListener(@map, e, => @['unspiderfy']()))
 
   p.initMarkerArrays = ->
     @markers = []
