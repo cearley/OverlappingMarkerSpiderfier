@@ -563,6 +563,8 @@ Note: The Google Maps API v3 must be included *before* this code
 
     _Class.ProjHelper.prototype['draw'] = function() {};
 
+    _Class.ProjHelper.prototype.onRemove = function() {};
+
     return _Class;
 
   })();
